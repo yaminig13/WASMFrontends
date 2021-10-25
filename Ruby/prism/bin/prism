@@ -1,0 +1,82 @@
+#!/usr/bin/env ruby
+
+TEMPLATE = <<-TEMPLATE.strip
+class HelloWorld < Prism::Component
+  attr_accessor :name
+
+  def initialize(name = "World")
+    @name = name
+  end
+
+  def render
+    div(".hello-world", [
+      input(onInput: call(:name=).with_target_data(:value)),
+      div("Hello, \#{name}")
+    ])
+  end
+end
+
+Prism.mount(HelloWorld.new)
+TEMPLATE
+
+HTML_TEMPLATE = <<-HTML.strip
+<!DOCTYPE html>
+<html lang=en-us>
+
+<head>
+    <meta charset=utf-8>
+    <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+    <title>Hello World</title>
+</head>
+
+  <body>
+      <div id="root"></div>
+      <script src="prism.js"></script>
+      <script async src=bundle.js></script>
+  </body>
+</html>
+HTML
+
+def init(path = "app.rb")
+  fail "#{path} already exists" if File.exist?(path)
+  File.write(path, TEMPLATE) # TODO - there's a race condition here where the file is created between the previous statement and this one
+  puts "Created new Prism app at app.rb\n\nRun prism server to see your app."
+end
+
+def server(port = 3042, host = '127.0.0.1')
+  IO.popen("node #{__dir__}/../wasm-server.js #{port} #{host}") do |f|
+    until f.eof?
+      puts f.gets
+    end
+  end
+end
+
+def help
+  puts <<-HEREDOC.strip
+Usage: prism <command> [options]
+
+Commands:
+  init [<path>]
+    initializes a new prism application at the given path
+    default: ./app.rb
+
+  server [<port> <host>]
+    runs a dev server on the given host and port
+    default: 3000 127.0.0.1
+
+  HEREDOC
+end
+
+command, *rest = ARGV
+
+case command
+when "init"
+  init
+when "build"
+  rest = ["app.rb"] if rest.empty?
+  build(rest)
+when "server"
+  server(*rest)
+else
+  help
+end

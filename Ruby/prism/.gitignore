@@ -1,0 +1,13 @@
+.DS_Store
+
+slides/build/*.wasm
+slides/build/*.js
+slides/build/*.wast
+slides/build/*.map
+examples/build/
+
+*.gem
+
+node_modules/
+
+/tmp

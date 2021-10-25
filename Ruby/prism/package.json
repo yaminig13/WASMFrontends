@@ -1,0 +1,29 @@
+{
+  "name": "prism",
+  "version": "1.0.0",
+  "main": "test.js",
+  "dependencies": {
+    "asm-dom": "^0.6.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "snabbdom": "^0.7.3"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Widdershin/prism.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Widdershin/prism/issues"
+  },
+  "homepage": "https://github.com/Widdershin/prism#readme",
+  "description": ""
+}

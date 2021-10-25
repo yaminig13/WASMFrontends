@@ -1,0 +1,20 @@
+{
+  "name": "mockAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "casual": "^1.6.2",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "web-push": "^3.4.5",
+    "ws": "^7.5.3"
+  }
+}

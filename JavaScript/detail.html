@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronika</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+
+    <link rel="stylesheet" href="/CSS/detail.css">
+</head>
+<body>
+    <!-- header -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <div>
+                <h1>Electronika</h1S>
+            </div>
+        </div>
+    </nav>
+    <div class="detail">
+        <div class="card">
+            <img>
+        </div>
+        <div class="info">
+            <h1 class="title"></h1>
+            <p class="price"></p>
+            <p class="description"></p>
+        </div>
+    </div>
+    <!-- <div class="reviews">
+        <h1>Reviews</h1>
+        <div class="reviewItems">
+
+        </div>
+    </div> -->
+    <!-- <form class="newReview" action="http://localhost:8080/review/" method="POST" enctype="multipart/form-data"> -->
+    <div>
+        <h1>Add Review</h1>
+        <div class="reviewForm">
+            <div class="user">
+                <label>Name</label>
+                <input/>
+            </div>
+            <div class="reviewText">
+                <label>Review</label>
+                <textarea></textarea>
+                <input name="cameraInput" type="file" class="cameraInput" accept="image/png,image/jpeg,image/jpg" hidden></input>
+
+            </div>
+            <div class="cameraCanvas">
+                <video id="video" width="200" height="200" autoplay></video>
+                <canvas id="canvas" width="200" height="200"></canvas>
+                <div>
+                    <button id="snap" type="button">Snap</button>
+                </div>
+            </div>
+            <div class="reviewBtns">
+                <button class="reviewImagebtn" type="button">Take Picture</button>
+                <button class="reviewSubmit" type="button">Submit review</button>
+            </div>
+            <!-- <div class="image" name="image"> -->
+        </div>
+    </div>
+    </form>
+    <script src="/controllers/detail.js"></script>
+</body>
+</html>

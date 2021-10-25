@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronika</title>
+    <link rel="stylesheet" href="/assets/fontawesome/css/all.css">
+
+    <link rel="stylesheet" href="/CSS/main.css">
+</head>
+<body>
+    <script src="wasm_exec.js"></script>
+    <script src="controllers/glueApp.js"></script>
+    <!-- <script src="controllers/glueProduct.js"></script> -->
+
+    
+    <!-- header -->
+    <nav class="navbar">
+        <div class="navbar-center">
+            <!-- <span class="nav-icon">
+                <i class="fas fa-bars"></i>
+            </span> -->
+            
+            <div class="search">
+                <input class="search-box" type="text" placeholder="Search..." list="productSuggestion"/>
+                <datalist id="productSuggestion"></datalist>
+                <span class="nav-icon">
+                    <i class="fa fa-search"></i>
+                </span>
+            </div>
+            <div>
+                <h1>Electronika</h1>
+            </div>
+            <div class="cart-btn">
+                <span class="nav-icon">
+                    <i class="fas fa-cart-plus"></i>
+            </span>
+            <!-- <div class="cart-items">0</div> -->
+            </div>
+        </div>
+    </nav>
+    <!-- Products -->
+
+    <section class="products">
+        <div class="section-title">
+            <h2>Our Products</h2>
+        </div>
+        <div class="products-center">
+            <!-- products -->
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <div class="cart-overlay">
+        <div class="cart">
+            <span class="close-cart">
+                <i class="fas fa-window-close"></i>
+            </span>
+            <h2>Your Cart</h2>
+            <div class="cart-content">
+                <!-- cart items -->
+            </div>
+            <div class="cart-footer">
+                <h3>Total Amount: €<span class="cart-total">0</span></h3>
+                <button class="checkout">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot">
+        <!-- <button class="open-button">Chat</button> -->
+        <i class="fas fa-comment open-button"></i>
+
+        <div class="chat-popup" id="myForm">
+            <div  class="form-container">
+                <h1>Chat</h1>
+
+                <div class="textarea">
+                    <div class="server">Server: Hello! How can we help you?</div>
+                    
+                </div>
+                <div>
+                <textarea placeholder="Type message.." class="msg" required></textarea>
+                </div>
+
+                <button  class="btn send">Send</button>
+                <button type="button" class="btn cancel" >Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p class="location">Find nearest Store</p>
+    </div>
+
+    <section class="viewedProducts" hidden>
+        <div class="section-title">
+            <h2>Recently Viewed Products</h2>
+        </div>
+        <div class="viewed-product">
+            <!-- products -->
+        </div>
+    </section>
+
+
+</body>
+</html>
